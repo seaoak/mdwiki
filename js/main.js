@@ -84,9 +84,11 @@
         var md = '';
 
         $.md.stage('init').subscribe(function(done) {
-
+            log.debug('[seaoak] ' + '$.md.mainHref = "' + $.md.mainHref + '"');
+            var postfix = $.md.mainHref.endsWith('.md') ? '' : '.md';
+            log.debug('[seaoak] ' + 'postfix = "' + postfix + '"');
             var ajaxReq = {
-                url: $.md.mainHref,
+                url: $.md.mainHref + postfix,
                 dataType: 'text'
             };
 
