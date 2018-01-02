@@ -520,6 +520,15 @@
         } else {
             $.md.mainHref = href;
         }
+
+        log.debug('[seaoak] ' + 'window.location.hash = "' + window.location.hash + '"');
+        log.debug('[seaoak] ' + 'href = "' + href + '"');
+        log.debug('[seaoak] ' + 'inPageAnchor = "' + $.md.inPageAnchor + '"');
+        log.debug('[seaoak] ' + 'mainHref = "' + $.md.mainHref + '"');
+
+        var normalized = window.normalizeUrlPathname($.md.mainHref);
+        if (! normalized) log.warn('[seaoak] ' + 'normalizeUrlPathname() failed.');
+        if (normalized) log.debug('[seaoak] ' + 'normalized = "' + $.md.mainHref + '"');
     }
 
     function appendDefaultFilenameToHash () {
