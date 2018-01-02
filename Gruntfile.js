@@ -23,6 +23,7 @@ module.exports = function(grunt) {
         },
 
         ownJsFiles: [
+            'js/normalize-url-pathname.js',
             'js/marked.js',
             'js/init.js',
             'js/logging.js',
@@ -138,6 +139,7 @@ module.exports = function(grunt) {
                 eqnull: true,
                 browser: true,
                 globals: {
+                    URL: false,
                     jQuery: true,
                     marked: true,
                     google: true,
@@ -153,7 +155,7 @@ module.exports = function(grunt) {
                 src: 'Gruntfile.js'
             },*/
             js: {
-                src: ['js/*.js', 'js/**/*.js', '!js/marked.js']
+                src: ['js/*.js', 'js/**/*.js', '!js/normalize-url-pathname.js', '!js/marked.js']
             }
         },
         lib_test: {
